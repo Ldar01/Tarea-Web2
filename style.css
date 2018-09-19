@@ -1,16 +1,25 @@
+/*En todo el documento se pusieron valores por defecto para poder ahorrar un poco de codigo
+-Se utilizo la funcion calc para ayudarnos con el tamanio de la fuente cuando cambie de tamanio la ventana
+-Scroll-Behavior: smooth se ocupo para hacer un efecto mas suave al momento de moverse de un sitio a otro de la ventana
+*/
 :root {
     font-size: calc( 0.5em + 1vw);
     color:white;
     font-family: 'Open Sans', sans-serif;
-    font-size: 75%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
-
+/* Se coloco el margen y padding en 0 para que todas las etiquetas que esten dentro de body queden pegadas en la orilla de la pagina
+*/
 body{
     margin: 0%;
     padding: 0;
     background-color: #202024;
 }
-
+/* la clase p1 esta situada en el header donde se encuentra la portada de la pagina
+-Se coloco una imagen de fondo
+-Se utilizo flex para poder tener un mayor control de los items que se encuentran dentro de la clase
+*/
 .p1{
     background-image: url(imagenes/banner.jpg);
     height: 30em;
@@ -23,35 +32,50 @@ body{
     flex-wrap: wrap;
     background-color:#42424f;
 }
-
+/*
+En la etiqueta 'a' se puso un ancho y altura del mismo tamanio para despues modificarlo con border
+y que se pueda ver circular.
+-overflow se utilizo para que las cosas que salieran fuera del borde no aparecieran
+-text-indent y white-space se utilizo para la sangria del texto porque tiene un hipervinculo que estorba a la imagen que se puso
+de fondo, en este caso la imagen es una flecha hacia abajo
+*/
 .p1 a{
     color: white;
-    font-size: 4em;
-    margin-left: 20%;
-    margin-right: 20%;
+    font-size: 1em;
+    border: solid white 1px;
+    border-radius: 100%;
+    background-image: url('imagenes/arrow.svg');
+    height: 3em;
+    width: 3em;
+    background-repeat: no-repeat; 
+    text-indent: 4em;
+    overflow: hidden;
+    background-position: center;
+    background-size: auto;
+    white-space: nowrap;
+    margin: 1.5em auto 2em auto;
 }
 
 .p1 h1{
-    font-size: 55px;
+    font-size: 5em;
     font-family: 'Passion One', cursive;
     color: white;
     font-weight: 400;
     margin: 0%;
-    height:20%;
-    width: 40%;
+    padding: 3%;
     text-align: center;
 }
 
 .p1 p{
     display: flex;
+    padding: 0 50% 0 50%;
     margin: 0;
-    font-size: 1.5em;
-    height: 20%;
+    font-size: 1em;
     width: 80%;
     text-align: center;
     font-weight: 100;
 }
-
+/**/
 .Contenedor{
     display: grid;
     grid-template-columns: 33.33% 33.33% 33.33%;
@@ -84,9 +108,11 @@ body{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 6%;
 }
-
+/*
+Se cambio el color y la decoracion del hipervinculo
+*/
 .w{
     text-decoration: none;
     text-align: center;
@@ -96,16 +122,13 @@ body{
     padding: 4%;
     font-size: 100%;
 }
-
+/**/
 .cont h4,p{
     margin-top: 0%;
     margin-bottom: 10%;
+    font-size:0.9em;
 }
-
-.cont h4{
-    font-size:130%;
-}
-
+/**/
 footer{
     padding-top: 3%;
     padding-bottom: 1%;
@@ -115,25 +138,28 @@ footer{
     margin: 0 23% 0 23%; 
     text-align: center;
 }
-
+/*
+Se cambio el disenio de la lista
+*/
 ul{
-    margin-left: 20%;
-    margin-right: 20%;
-    padding: 0;
+    margin-left: 10%;
+    margin-right: 10%;
     list-style: none;
     display: inline-flex;
-    width: auto;
-    font-size: 100%;
     color: #42424f;
+    justify-content:space-around;
     padding: 0;
-    
+    width: 13.5em;  
 }
-
+/**/
 ul li{
     border: #42424f 2px solid;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2em;
+    width: 2em;
+    border-radius: 100%;
 }
 
 ul li a{
@@ -147,7 +173,7 @@ ul li a:hover{
 #ident{
     margin: 0;
     font-weight: 100;
-    font-size: 75%;
+    font-size: 0.5em;
     height: 30px;
     color: #42424f;
 }
@@ -159,49 +185,30 @@ ul li a:hover{
 
 #hola{
     margin: 0;
+    font-size: 0.7em;
 }
-
+/*
+Se cambian los colores de los botones watch
+*/
 #b2, #b4{
     background-color: #7f92cf;
 }
-
+/**/
 #b3, #b5{
     background-color: #9d7ed0;
 }
-
+/*
+Se utliza una query para que cuando cambie el tamnio de la ventana las columnas se ajusten para tener
+una vista mas agradable de la pagina
+*/
 @media only screen and (max-width: 1277px) {
     .Contenedor{
         grid-template-columns: 50% 50%;
     }
 }
 
-
 @media only screen and (max-width: 724px) {
     .Contenedor{
         grid-template-columns: 100%;
-    }
-}
-
-@media only screen and (max-width: 621px) {
-    .p1 p{
-        font-size: 1.0em;
-    }
-}
-
-@media only screen and (max-width: 569px) {
-    .p1 h1{
-        font-size: 40px;
-    }
-}
-
-@media only screen and (max-width: 415px) {
-    .p1 h1{
-        font-size: 35px;
-    }
-}
-
-@media only screen and (max-width: 363px) {
-    .p1 h1{
-        font-size: 30px;
     }
 }
