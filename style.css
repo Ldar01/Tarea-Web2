@@ -21,16 +21,14 @@ body{
 -Se utilizo flex para poder tener un mayor control de los items que se encuentran dentro de la clase
 */
 .p1{
-    background-image: url(imagenes/banner.jpg);
     height: 30em;
-    background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     flex-wrap: wrap;
-    background-color:#42424f;
+    position: relative;
 }
 /*
 En la etiqueta 'a' se puso un ancho y altura del mismo tamanio para despues modificarlo con border
@@ -56,6 +54,15 @@ de fondo, en este caso la imagen es una flecha hacia abajo
     margin: 1.5em auto 2em auto;
 }
 
+.video{
+    position: absolute;
+    z-index: -1;
+    height: 30em;
+    width: 100%;
+    object-fit: cover;
+}
+
+
 .p1 h1{
     font-size: 5em;
     font-family: 'Passion One', cursive;
@@ -71,7 +78,7 @@ de fondo, en este caso la imagen es una flecha hacia abajo
     padding: 0 50% 0 50%;
     margin: 0;
     font-size: 1em;
-    width: 80%;
+    width: 60%;
     text-align: center;
     font-weight: 100;
 }
@@ -80,6 +87,7 @@ de fondo, en este caso la imagen es una flecha hacia abajo
     display: grid;
     grid-template-columns: 33.33% 33.33% 33.33%;
     grid-template-rows: 50% 50%;
+    margin: 3%;
     padding-bottom: 3%;
     padding-top: 3%;
     padding-left: 10%;
